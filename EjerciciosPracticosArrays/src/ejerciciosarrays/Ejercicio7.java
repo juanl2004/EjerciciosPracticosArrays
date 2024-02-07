@@ -14,15 +14,14 @@ public class Ejercicio7 {
 				"Octubre", "Noviembre", "Diciembre" };
 
 		for (int i = 0; i < temperatura.length; i++) {
-			System.out.print("Ingrese la temperatura promedio de:  " + meses[i] + "  ");
+			System.out.print("Ingrese la temperatura de " + meses[i] + ":");
 			temperatura[i] = sc.nextInt();
 		}
 
 		for (int i = 0; i < temperatura.length; i++) {
-			System.out.print(meses[i]);
-			System.out.println(temperatura[i] + "º");
+			System.out.print(meses[i] + " -->");
 			for (int j = 0; j < temperatura[i]; j++) {
-				System.out.print("*");
+				System.out.print(" *");
 			}
 			System.out.println();
 		}
