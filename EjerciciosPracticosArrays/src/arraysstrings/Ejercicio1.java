@@ -24,7 +24,7 @@ public class Ejercicio1 {
 		} else if (frase2.length() < frase1.length()) {
 			System.out.println("La primera frase es mayor");
 		} else {
-			System.out.println("Las frases on iguales");
+			System.out.println("Las frases son iguales");
 		}
 		
 		sc.close();

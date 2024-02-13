@@ -10,7 +10,7 @@ public class Ejercicio3 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Introduce una frase");
+		System.out.println("Introduce una frase -> ");
 		frase = sc.nextLine();
 
 		System.out.println("El número de espacios en la frase es de --> " + Ejercicio3.espaciosBlancos(frase));
