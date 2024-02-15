@@ -13,7 +13,9 @@ public class Ejercicio8 {
         System.out.println("Introduce una frase --> ");
         frase = sc.nextLine();
 
-        if (esPalindroma(frase)) {
+        frase.toLowerCase();
+        
+        if (Ejercicio8.esPalindroma(frase)) {
             System.out.println("La frase es palíndroma.");
         } else {
             System.out.println("La frase no es palíndroma.");
@@ -22,20 +24,21 @@ public class Ejercicio8 {
 
     public static boolean esPalindroma(String frase) {
 
-        frase = frase.replace(" ", ""); 
-        frase = frase.toLowerCase(); 
-
-        System.out.println("Frase sin espacios y en minúsculas: " + frase);
-
-        for (int i = 0; i < frase.length() / 2; i++) {
-            char primerCaracter = frase.charAt(i);
-            char ultimoCaracter = frase.charAt(frase.length() - i - 1);
-            System.out.println("Comparando caracteres: " + primerCaracter + " y " + ultimoCaracter);
-            if (primerCaracter != ultimoCaracter) {
-                return false;
-            }
-        }
-        return true;
+    frase.toLowerCase();
+    
+     String fraseInvertida = "";
+     
+     boolean palindroma = false;
+     
+     for (int i = frase.length()-1; i >= 0; i--) {
+    	 fraseInvertida += frase.charAt(i);
+     }
+     
+     if (frase.replace(" ", "").equals(fraseInvertida.replace(" ", ""))) {
+    	 palindroma = true;
+     }
+     
+     return palindroma;
     }
 }
 
