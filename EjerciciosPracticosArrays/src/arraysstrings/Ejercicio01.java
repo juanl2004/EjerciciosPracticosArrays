@@ -2,8 +2,15 @@ package arraysstrings;
 
 import java.util.Scanner;
 
-public class Ejercicio1 {
+/**
+ * Esta clase compara dos frases introducidas por el usuario para determinar
+ * cuál es más larga.
+ */
+public class Ejercicio01 {
 
+	/**
+	 * Método main que compara dos frases para determinar cuál es más larga.
+	 */
 	public static void main(String[] args) {
 
 		// Creamos la variable frase 1 para almacenar la primera frase introducida por
@@ -36,7 +43,7 @@ public class Ejercicio1 {
 			System.out.println("Las frases son iguales");
 		}
 
-		//Cierrre de Scanner
+		// Cierrre de Scanner
 		sc.close();
 	}
 

@@ -3,8 +3,16 @@ package arraysstrings;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio4 {
+/**
+ * Esta clase ordena alfabéticamente las palabras de una frase introducida por
+ * el usuario.
+ */
+public class Ejercicio04 {
 
+	/**
+	 * Método main que solicita al usuario una frase, la divide en palabras y las
+	 * ordena alfabéticamente.
+	 */
 	public static void main(String[] args) {
 		// Creo la variable frase para almacenar la frase introducida por el usuario.
 		String frase;
@@ -31,7 +39,7 @@ public class Ejercicio4 {
 			System.out.print(palabras + " ");
 		}
 
-		//Cierre de Scanner
+		// Cierre de Scanner
 		sc.close();
 	}
 

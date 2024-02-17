@@ -2,8 +2,12 @@ package arraysstrings;
 
 import java.util.Scanner;
 
-public class Ejercicio7 {
+public class Ejercicio07 {
 
+	/**
+	 * Este método principal solicita al usuario una frase y una palabra, y luego
+	 * llama a la función para buscar cuántas veces aparece la palabra en la frase.
+	 */
 	public static void main(String[] args) {
 
 		// Creamos esta variable para almacenar la frase introducida por el usuario.
@@ -26,13 +30,18 @@ public class Ejercicio7 {
 		palabra = sc.nextLine();
 
 		// Mostramos el resultado llamando a la función busquedaPalabra.
-		System.out.println("La palabra aparece --> " + Ejercicio7.busquedaPalabra(frase, palabra));
+		System.out.println("La palabra aparece --> " + Ejercicio07.busquedaPalabra(frase, palabra));
 
 		sc.close();
 	}
 
-	// Esta función nos devuelve el número de veces que aparece la palabra
-	// introducida de la frase.
+	/**
+	 * Este método busca cuántas veces aparece una palabra dada en una frase.
+	 * 
+	 * @param frase   La frase en la que se buscará la palabra.
+	 * @param palabra La palabra que se desea buscar en la frase.
+	 * @return El número de veces que aparece la palabra en la frase.
+	 */
 	public static int busquedaPalabra(String frase, String palabra) {
 		// Contador para contabilizar el número de veces que aparece la palabra en la
 		// frase
@@ -49,7 +58,7 @@ public class Ejercicio7 {
 			}
 		}
 
-		//Devolvemos el número de veces.F
+		// Devolvemos el número de veces.
 		return contador;
 	}
 }

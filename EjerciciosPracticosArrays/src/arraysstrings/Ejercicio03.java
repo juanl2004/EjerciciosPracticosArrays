@@ -2,8 +2,16 @@ package arraysstrings;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+/**
+ * Esta clase cuenta el número de espacios en blanco en una frase introducida
+ * por el usuario.
+ */
+public class Ejercicio03 {
 
+	/**
+	 * Método main que solicita al usuario una frase y cuenta el número de espacios
+	 * en blanco.
+	 */
 	public static void main(String[] args) {
 
 		// Creamos esta variable para almacenar la frase introducida por el usuario.
@@ -17,14 +25,20 @@ public class Ejercicio3 {
 		frase = sc.nextLine();
 
 		// Mostramos el número de espacios llamando a la función.
-		System.out.println("El número de espacios en la frase es de --> " + Ejercicio3.espaciosBlancos(frase));
+		System.out.println("El número de espacios en la frase es de --> " + Ejercicio03.espaciosBlancos(frase));
 
 		// Cierre de Scanner
 		sc.close();
 	}
 
-	// Creamos esta función para que nos cuente el número de espacios de la frase
-	// introducida como parametro.
+	/**
+	 * Creamos esta función para que nos cuente el número de espacios de la frase
+	 * introducida como parametro.
+	 * 
+	 * @param frase La frase en la que se desea contar los espacios en blanco.
+     * @return El número de espacios en blanco en la frase.
+	 */
+
 	public static int espaciosBlancos(String frase) {
 
 		// Variable para contar el número de espacios.
