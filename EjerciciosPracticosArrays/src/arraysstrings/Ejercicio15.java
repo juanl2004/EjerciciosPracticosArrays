@@ -73,20 +73,36 @@ public class Ejercicio15 {
 	 * @return La pista anagrama generada.
 	 */
 	public static String anagrama(char[] caracteres) {
-		Random aleatorio = new Random();
+		// Crear un objeto Random para generar números aleatorios.
+		Random rand = new Random();
 
+		// Variable que almacenará la palabra desordenada.
 		String palabraDes = "";
 
+		// Almacenamos los caracteres de la palabra desordenada.
 		char[] letrasDes = new char[caracteres.length];
 
+		// Recorremos cada caracter de la palabra original.
 		for (int i = 0; i < caracteres.length; i++) {
-
-			letrasDes[i] = caracteres[aleatorio.nextInt(0, caracteres.length)];
-
+			// Declarar una variable para almacenar la letra aleatoria.
+			char letraAleatoria;
+			
+			// Generaramos una letra aleatoria hasta que sea única en la palabra
+			// desordenada.
+			do {
+				// Generaramos una letra aleatoria a partir de los caracteres de la palabra
+				// original.
+				letraAleatoria = caracteres[rand.nextInt(caracteres.length)];
+				
+				// Comprobamos si el carácter ya existe en la palabra desordenada.
+			} while (palabraDes.indexOf(letraAleatoria) != -1);
+			// Asignamos la letra laeatoria al conjunto de letras desordenadas.
+			letrasDes[i] = letraAleatoria;
+			// Agregamos la letra aleatoria a la palabra desordenada.
 			palabraDes += letrasDes[i];
-
 		}
 
+		// Devolver la palabra desordenada.
 		return palabraDes;
 
 	}

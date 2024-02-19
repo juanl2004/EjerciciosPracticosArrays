@@ -44,8 +44,6 @@ public class Ejercicio16 {
 		// Generar una pista anagrama para la palabra del Jugador 1
 		pista = anagrama(caracteres);
 
-		int intento = 1; 
-
 		// El Jugador 2 intenta adivinar la palabra del Jugador 1 hasta que la adivine.
 		do {
 
@@ -58,8 +56,6 @@ public class Ejercicio16 {
 
 			int letrasCoincidentes = contarCoincidentes(jugador1, jugador2);
 			System.out.println("Número de letras coincidentes: " + letrasCoincidentes);
-
-			intento++;
 
 			// Continuar el bucle hasta que el intento del Jugador 2 sea igual a la palabra
 			// del Jugador 1.
@@ -80,31 +76,59 @@ public class Ejercicio16 {
 	 * @return La pista anagrama generada.
 	 */
 	public static String anagrama(char[] caracteres) {
-		Random aleatorio = new Random();
+		// Crear un objeto Random para generar números aleatorios.
+		Random rand = new Random();
 
+		// Variable que almacenará la palabra desordenada.
 		String palabraDes = "";
 
+		// Almacenamos los caracteres de la palabra desordenada.
 		char[] letrasDes = new char[caracteres.length];
 
+		// Recorremos cada caracter de la palabra original.
 		for (int i = 0; i < caracteres.length; i++) {
+			// Declarar una variable para almacenar la letra aleatoria.
+			char letraAleatoria;
+			// Generaramos una letra aleatoria hasta que sea única en la palabra
+			// desordenada.
 
-			letrasDes[i] = caracteres[aleatorio.nextInt(0, caracteres.length)];
-
+			do {
+				// Generaramos una letra aleatoria a partir de los caracteres de la palabra
+				// original.
+				letraAleatoria = caracteres[rand.nextInt(caracteres.length)];
+				// Comprobamos si el carácter ya existe en la palabra desordenada.
+			} while (palabraDes.indexOf(letraAleatoria) != -1);
+			// Asignamos la letra laeatoria al conjunto de letras desordenadas.
+			letrasDes[i] = letraAleatoria;
+			// Agregamos la letra aleatoria a la palabra desordenada.
 			palabraDes += letrasDes[i];
-
 		}
 
+		// Devolver la palabra desordenada.
 		return palabraDes;
 
 	}
 
-	public static int contarCoincidentes(String palabraOriginal, String palabraIntento) {
+	/**
+	 * Cuenta el número de letras coincidentes entre dos palabras.
+	 *
+	 * @param jugador1 La palabra original.
+	 * @param jugador2  La palabra intento.
+	 * @return El número de letras coincidentes.
+	 */
+	public static int contarCoincidentes(String jugador1, String jugador2) {
+		// Inicializar el contador de coincidencias.
 		int coincidencias = 0;
-		for (int i = 0; i < palabraOriginal.length(); i++) {
-			if (palabraOriginal.charAt(i) == palabraIntento.charAt(i)) {
+
+		// Recorrer cada letra de las dos palabras.
+		for (int i = 0; i < jugador1.length(); i++) {
+			// Si la letra en la misma posición de ambas palabras coincide incrementamos el
+			// contador.
+			if (jugador1.charAt(i) == jugador2.charAt(i)) {
 				coincidencias++;
 			}
 		}
+		// Devolver el número de coincidencias.
 		return coincidencias;
 	}
 
